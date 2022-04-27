@@ -1,28 +1,36 @@
 
-
+// let playerName = ' Killer Kane' ;
 let playerName= window.prompt("What is your robot's name? ")  // This is how we store user input for the program
 let playerHealth = 100;
 let playerAttack = 10;
 let playerMoney = 10;
+
+// // You can also log multiple values at once like this
+// console.log(playerName, playerAttack, playerHealth);
+
 
 let enemyName = "Roborto";
 let enemyHealth = 50;
 let enemyAttack = 12;
 
 
-// Alert players that they are starting the round
+
 let fight =function(){
+    // Alert players that they are starting the round
     window.alert("Welcome to Robot Gladiators!")
 }
 
-fight();
 
+// ask player if they'd like to fight or run
 let promptFight = window.prompt (" Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose. ");
 
 
 window.alert(playerName);  // Added an alert that will contain the robot's name after it's entered.
 
+
+ // if player choses to fight, fight
 if (promptFight === "fight" || promptFight === "FIGHT") {
+    
     // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemyHealth = enemyHealth - playerAttack;
     console.log(
@@ -78,13 +86,13 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
         fight();
 }
 
-
+    // if player did not chose 1 or 2 in prompt
     } 
         else {
     window.alert("You need to choose a valid option. Try again!");
   }
 
-
+fight();
 
 
 
