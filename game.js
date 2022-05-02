@@ -1,3 +1,10 @@
+// function to generate a random numeric value
+let randomNumber = function(min, max) {
+    let value = Math.floor(Math.random() * (max - min + 1) + min);
+  
+    return value;
+  };
+
 
 // let playerName = ' Killer Kane' ;
 let playerName= window.prompt("What is your robot's name? ")  // This is how we store user input for the program
@@ -9,9 +16,13 @@ let playerMoney = 20;
 // console.log(playerName, playerAttack, playerHealth);
 
 
+// Math.Random() 
+// Math.Round()
+//Math.Floor()
+
 let enemyNames = ['Roborto', ' Android', ' Trumble']; 
-let enemyHealth = 50;
-let enemyAttack = 12;
+enemyHealth = Math.floor(Math.random()* 21)+ 40 ;  // Produces a random WHOLE number between 0-60 .
+let enemyAttack = randomNumber();
 
 console.log(enemyNames);
 console.log(enemyNames.length);
@@ -33,14 +44,14 @@ let fight = function(enemyName) {
         if (confirmSkip) {
           window.alert(playerName + ' has decided to skip this fight. Goodbye!');
           // subtract money from playerMoney for skipping
-          playerMoney = playerMoney - 10;
+          playerMoney = Math.max(0, playerMoney - 10);
           console.log("playerMoney", playerMoney)
          break;
         }
       }
   
       // remove enemy's health by subtracting the amount set in the playerAttack variable
-      enemyHealth = enemyHealth - playerAttack;
+      enemyHealth = Math.max(0, enemyHealth - playerAttack);
       console.log(
         playerName + ' attacked ' + enemyName + '. ' + enemyName + ' now has ' + enemyHealth + ' health remaining.'
       );
@@ -58,7 +69,7 @@ let fight = function(enemyName) {
       }
   
       // remove players's health by subtracting the amount set in the enemyAttack variable
-      playerHealth = playerHealth - enemyAttack;
+      playerHealth = Math.max(0, playerHealth - enemyAttack);
       console.log(
         enemyName + ' attacked ' + playerName + '. ' + playerName + ' now has ' + playerHealth + ' health remaining.'
       );
@@ -73,6 +84,9 @@ let fight = function(enemyName) {
       }
     } // end of while loop
   }; // end of fight function
+
+
+  
 
 
 // Shop feature Function
@@ -233,7 +247,7 @@ else {
 }
 
 endGame();
-
+randomNumber();
 
 
 
